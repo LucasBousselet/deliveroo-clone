@@ -1,5 +1,5 @@
 import { Image, Text, TextInput, View, ScrollView } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { 
@@ -13,12 +13,18 @@ import FeaturedRow from '../components/FeaturedRow';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
+    const [featuredCategories, setFeaturedCategories] = useState([]);
 
-    useEffect(() => {
+    // Runs when the UI loads
+    useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false
         })
-    }, [])
+    }, []);
+
+    // Runs when the functional component loads
+    useEffect(() => {
+    }, []);
 
     return (
         <SafeAreaView className='bg-white pt-5'>
@@ -62,7 +68,15 @@ const HomeScreen = () => {
                 {/* Categories */}
                 <Categories />
 
-                {/* Feature */}
+                {/* Featured */}
+                {/* {featuredCategories?.map(category => (
+                    <FeaturedRow 
+                        key={category._id}
+                        id={category._id}
+                        title={category.name}
+                        description={category.short_description}
+                    />
+                ))} */}
                 <FeaturedRow 
                     id='Testing1'
                     title='Featured'
