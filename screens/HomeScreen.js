@@ -10,6 +10,7 @@ import {
 } from 'react-native-heroicons/outline'
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
+import { getFeaturedCategoriesAsync } from '../api/dataService';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -24,6 +25,7 @@ const HomeScreen = () => {
 
     // Runs when the functional component loads
     useEffect(() => {
+        getFeaturedCategoriesAsync().then(featured => setFeaturedCategories(featured));
     }, []);
 
     return (
@@ -69,36 +71,14 @@ const HomeScreen = () => {
                 <Categories />
 
                 {/* Featured */}
-                {/* {featuredCategories?.map(category => (
+                {featuredCategories?.map(category => (
                     <FeaturedRow 
-                        key={category._id}
-                        id={category._id}
+                        key={category.id}
+                        id={category.id}
                         title={category.name}
                         description={category.short_description}
                     />
-                ))} */}
-                <FeaturedRow 
-                    id='Testing1'
-                    title='Featured'
-                    description='Paid placements from our partners'
-                    featuredCategory='featured'
-                />
-                
-                {/* Tasty Discounts */}
-                <FeaturedRow 
-                    id='Testing2'
-                    title='Tasty Discounts'
-                    description="Everyone's been enjoying these juicy discounts!"
-                    featuredCategory='discounts'
-                />
-
-                {/* Offers near your */}
-                <FeaturedRow 
-                    id='Testing3'
-                    title='Offers near you!'
-                    description='Why not support your local restaurants tonight!'
-                    featuredCategory='offers'
-                />
+                ))}
             </ScrollView>
         </SafeAreaView>
     )

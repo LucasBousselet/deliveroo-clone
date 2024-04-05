@@ -1,4 +1,4 @@
-{
+export const fakeData = {
 	"restaurant": [{		
 		"id": "r1",
 		"name": "Wagamama",
@@ -162,7 +162,7 @@
 	}, {
 		"id": "c3",
 		"name": "Sandwich",
-		"image": "sandwhich.png"
+		"image": "sandwich.png"
 	}, {
 		"id": "c4",
 		"name": "Burger",
@@ -173,14 +173,17 @@
 		"image": "sushiFoodIcon.jpg"
 	}],
 	"featured": [{
+		"id": "f1",
 		"name": "Featured", 		
 		"short_description": "Paid placements from our partners",
 		"restaurants": ["r4", "r1", "r2", "r5"]
 	}, {
+		"id": "f2",
 		"name": "Tasty Discounts", 		
 		"short_description": "Everyone's been enjoying these juicy discounts!",
 		"restaurants": ["r3", "r4", "r6", "r5"]
 	}, {
+		"id": "f3",
 		"name": "Offers near you!", 		
 		"short_description": "Why not support your local restaurants tonight!",
 		"restaurants": ["r1", "r2", "r3", "r4"]
