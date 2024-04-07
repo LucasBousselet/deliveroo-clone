@@ -70,6 +70,8 @@ const getImage = path => {
             return require('../assets/fakeImage/KFChoe.jpeg');
         case 'nandoo.png':
             return require('../assets/fakeImage/nandoo.png');
+        case 'nandos1.jpg':
+            return require('../assets/fakeImage/nandos1.jpg');
         case 'yosushi.jpg':
             return require('../assets/fakeImage/yosushi.jpg');
         case '5guys.jpg':
